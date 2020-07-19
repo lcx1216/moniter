@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gis.monitor.mapper.eqinfo.EI_PRECURSORYANOMALY_MAPPER">
+
+    <select id="getanormal" resultType="com.gis.monitor.pojo.eqinfo.EI_PRECURSORYANOMALY">
+        select * from EI_PRECURSORYANOMALY WHERE STATIONNAME = #{station_Name}  AND  regexp_like(#{ITEMS},'keyWord')
+   </select>
+
+</mapper>

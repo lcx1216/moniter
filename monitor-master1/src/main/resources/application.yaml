@@ -1,0 +1,69 @@
+# springboot 配置页面
+
+# spring 相关配置
+spring:
+  # 错误信息
+  messages:
+    # 文件名
+    basename: error_codes
+    cache-duration: 600s
+  # 数据源配置
+  datasource:
+    # 基础信息库
+    basicinfo:
+      # 连接url
+      jdbc-url: jdbc:oracle:thin:@47.101.35.46:1521:ORCL
+      # 驱动
+      driver-class-name: oracle.jdbc.OracleDriver
+      # 用户
+      username: JC_BASICINFO
+      # 密码
+      password: JC_BASICINFO
+    # 监测运行管理得分库
+    managegrade:
+      # 连接url
+      jdbc-url: jdbc:oracle:thin:@47.101.35.46:1521:ORCL
+      # 驱动
+      driver-class-name: oracle.jdbc.OracleDriver
+      # 用户
+      username: JC_MANAGEGRADE
+      # 密码
+      password: gis502
+    eqinfo:
+      # 连接url
+      jdbc-url: jdbc:oracle:thin:@47.101.35.46:1521:ORCL
+      # 驱动
+      driver-class-name: oracle.jdbc.OracleDriver
+      # 用户
+      username: JC_EQINFO
+      # 密码
+      password: JC_EQINFO
+   historyinfo:
+      # 连接url
+      jdbc-url: jdbc:oracle:thin:@47.101.35.46:1521:ORCL
+      # 驱动
+      driver-class-name: oracle.jdbc.OracleDriver
+      # 用户
+      username: JC_HISTORYINFO
+      # 密码
+      password: JC_HISTORYINFO
+    qzdata:
+      # 连接url
+      jdbc-url: jdbc:oracle:thin:@47.240.171.243:1521/PDBQZ
+      # 驱动
+      driver-class-name: oracle.jdbc.OracleDriver
+      # 用户
+      username: qzguest
+      # 密码
+      password: Monday01
+
+
+# 服务设置
+server:
+  # 端口设置
+  port: 8092
+
+# mybatis 设置
+mybatis:
+  type-aliases-package: com.gis.monitor.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml

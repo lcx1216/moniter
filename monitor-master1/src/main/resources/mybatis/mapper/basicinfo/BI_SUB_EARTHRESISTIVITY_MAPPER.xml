@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gis.monitor.mapper.basicinfo.BI_SUB_EARTHRESISTIVITY_MAPPER">
+
+    <select id="getStationIdList" resultType="com.gis.monitor.pojo.basicinfo.BI_SUB_EARTHRESISTIVITY">
+        SELECT
+        *
+        FROM
+        BI_SUB_EARTHRESISTIVITY
+        WHERE
+        ITEMID = #{itemId}
+        AND STATIONID = #{stationId}
+        AND POINTID = #{pointId}
+        AND STATE = #{state}
+   </select>
+    <select id="getAllEarthData" resultType="com.gis.monitor.pojo.basicinfo.BI_SUB_EARTHRESISTIVITY">
+        SELECT
+        *
+        FROM
+        BI_SUB_EARTHRESISTIVITY
+        WHERE
+        ITEMID = #{itemId}
+        AND STATIONID = #{stationId}
+        AND POINTID = #{pointId}
+        AND STATE = #{state}
+        AND ROWNUM <![CDATA[ <= ]]> 2
+   </select>
+
+</mapper>

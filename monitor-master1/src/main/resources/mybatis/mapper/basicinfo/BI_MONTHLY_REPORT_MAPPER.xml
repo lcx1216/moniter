@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gis.monitor.mapper.basicinfo.BI_MONTHLY_REPORT_MAPPER">
+    <select id="getRatingTimeList" resultType="com.gis.monitor.pojo.basicinfo.BI_MONTHLY_REPORT">
+        select * from BI_MONTHLY_REPORT
+   </select>
+
+    <select id="getMouthTime" resultType="java.lang.Integer">
+       SELECT MAX(RATINGTIME) FROM BI_MONTHLY_REPORT WHERE STATIONID=#{station_id} and ITEMID=#{item_id} and POINTID=#{point_id};
+   </select>
+
+
+    <select id="getMouthGrade" resultType="com.gis.monitor.pojo.basicinfo.BI_MONTHLY_REPORT">
+       SELECT * FROM BI_MONTHLY_REPORT WHERE STATIONID=#{station_id} and ITEMID=#{item_id} and POINTID=#{point_id} and STATE='1' and RATINGTIME=#{mouthTime}
+   </select>
+
+    <select id="getMarkArray" resultType="com.gis.monitor.pojo.basicinfo.BI_MONTHLY_REPORT">
+       SELECT SCORE FROM BI_MONTHLY_REPORT WHERE ITEMID LIKE '32%' and STATE='1' and RATINGTIME=#{mouthTime}
+   </select>
+
+
+
+</mapper>

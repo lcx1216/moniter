@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gis.monitor.mapper.historyinfo.HI_HISTORYEQ_MAPPER">
+
+    <select id="gethistoryData" resultType="com.gis.monitor.pojo.historyinfo.HI_HISTORYEQ">
+        select * from HI_HISTORYEQ WHERE lati!='0.00'
+   </select>
+
+
+</mapper>

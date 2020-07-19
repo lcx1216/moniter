@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gis.monitor.mapper.qzdata.QZ_DICT_STATIONS_MAPPER">
+    <select id="getStations" resultType="com.gis.monitor.pojo.qzdata.QZ_DICT_STATIONS">
+        select * from QZDATA.QZ_DICT_STATIONS
+   </select>
+
+    <select id="getstationPositionSql" resultType="com.gis.monitor.pojo.qzdata.QZ_DICT_STATIONS">
+        select * from QZDATA.QZ_DICT_STATIONS WHERE STATIONID=#{station_id}
+   </select>
+</mapper>

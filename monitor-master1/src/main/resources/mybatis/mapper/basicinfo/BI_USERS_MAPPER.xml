@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gis.monitor.mapper.basicinfo.BI_USERS_MAPPER">
+    <select id="queryUerList" resultType="com.gis.monitor.pojo.basicinfo.BI_USERS">
+        select * from BI_USERS
+   </select>
+    <select id="hasUser" parameterType="String" resultType="com.gis.monitor.pojo.basicinfo.BI_USERS">
+        select * from BI_USERS where USERNAME = #{USERNAME} and PASSWORD = #{PASSSWORD}
+   </select>
+    <select id="login" parameterType="String" resultType="com.gis.monitor.pojo.basicinfo.BI_USERS">
+        select * from BI_USERS where PASSWORD = #{PASSWORD} and USERNAME = #{USERNAME}
+   </select>
+    <select id="findUserByUserName" parameterType="String" resultType="com.gis.monitor.pojo.basicinfo.BI_USERS">
+         select * from BI_USERS where USERNAME = #{USERNAME}
+    </select>
+</mapper>

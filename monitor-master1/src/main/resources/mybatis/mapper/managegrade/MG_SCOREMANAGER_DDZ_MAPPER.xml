@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gis.monitor.mapper.managegrade.MG_SCOREMANAGER_DDZ_MAPPER">
+    <select id="getSubjectList" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+ select * from MG_SCOREMANAGER_DDZ
+ </select>
+
+    <select id="getAll" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+        SELECT
+        EVALUATIONPRO3,
+        EVALUATIONPRO4,
+        TO_CHAR (MIN, '000000.00') AS MIN,
+        TO_CHAR (MAX, '000000.00') AS MAX,
+        SCORE,
+        TYPE
+        FROM
+        MG_SCOREMANAGER_DDZ
+        WHERE
+        EVALUATIONPRO1 = '数据质量评价'
+        ORDER BY
+        "ID"
+	 </select>
+
+    <select id="getWDX" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+        SELECT
+            EVALUATIONPRO3,
+            TO_CHAR (MIN, '000000.00') AS MIN,
+            TO_CHAR (MAX, '000000.00') AS MAX,
+            SCORE,
+            TYPE
+        FROM
+            MG_SCOREMANAGER_DDZ
+        WHERE
+            EVALUATIONPRO1 = '数据质量评价'
+        AND EVALUATIONPRO3 LIKE '稳定性%'
+        ORDER BY
+            "ID"
+	 </select>
+    <select id="getLXX" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+         SELECT
+         EVALUATIONPRO3,
+         TO_CHAR (MIN, '000000.00') AS MIN,
+         TO_CHAR (MAX, '000000.00') AS MAX,
+         SCORE,
+         TYPE
+         FROM
+         MG_SCOREMANAGER_DDZ
+         WHERE
+         EVALUATIONPRO1 = '数据质量评价'
+         AND EVALUATIONPRO3 LIKE '连续性%'
+         ORDER BY
+         "ID"
+ </select>
+    <select id="getGCJD" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+         SELECT
+         EVALUATIONPRO3,
+         TO_CHAR (MIN, '000000.00') AS MIN,
+         TO_CHAR (MAX, '000000.00') AS MAX,
+         SCORE,
+         TYPE
+         FROM
+         MG_SCOREMANAGER_DDZ
+         WHERE
+         EVALUATIONPRO1 = '数据质量评价'
+         AND EVALUATIONPRO3 LIKE '观测精度%'
+         ORDER BY
+         "ID"
+ </select>
+    <select id="getNBTZ" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+         SELECT
+         EVALUATIONPRO3,
+         TO_CHAR (MIN, '000000.00') AS MIN,
+         TO_CHAR (MAX, '000000.00') AS MAX,
+         SCORE,
+         TYPE
+         FROM
+         MG_SCOREMANAGER_DDZ
+         WHERE
+         EVALUATIONPRO1 = '数据质量评价'
+         AND EVALUATIONPRO3 LIKE '年变特征%'
+         ORDER BY
+         "ID"
+ </select>
+    <select id="getGCCD" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+ SELECT
+ EVALUATIONPRO3,
+ TO_CHAR (MIN, '000000.00') AS MIN,
+ TO_CHAR (MAX, '000000.00') AS MAX,
+ SCORE,
+ TYPE
+ FROM
+ MG_SCOREMANAGER_DDZ
+ WHERE
+ EVALUATIONPRO1 = '数据质量评价'
+ AND EVALUATIONPRO3 LIKE '观测长度%'
+ ORDER BY
+ "ID"
+ </select>
+    <select id="getQSWGCLXX" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+ SELECT
+ EVALUATIONPRO3,
+ TO_CHAR (MIN, '000000.00') AS MIN,
+ TO_CHAR (MAX, '000000.00') AS MAX,
+ SCORE,
+ TYPE
+ FROM
+ MG_SCOREMANAGER_DDZ
+ WHERE
+ EVALUATIONPRO1 = '数据质量评价'
+ AND EVALUATIONPRO4 LIKE '潜水位观测连续性%'
+ ORDER BY
+ "ID"
+ </select>
+    <select id="getQSWGCCD" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+ SELECT
+ EVALUATIONPRO3,
+ TO_CHAR (MIN, '000000.00') AS MIN,
+ TO_CHAR (MAX, '000000.00') AS MAX,
+ SCORE,
+ TYPE
+ FROM
+ MG_SCOREMANAGER_DDZ
+ WHERE
+ EVALUATIONPRO1 = '数据质量评价'
+ AND EVALUATIONPRO4 LIKE '潜水位观测长度%'
+ ORDER BY
+ "ID"
+ </select>
+    <select id="getJYLGCLXX" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+ SELECT
+ EVALUATIONPRO3,
+ TO_CHAR (MIN, '000000.00') AS MIN,
+ TO_CHAR (MAX, '000000.00') AS MAX,
+ SCORE,
+ TYPE
+ FROM
+ MG_SCOREMANAGER_DDZ
+ WHERE
+ EVALUATIONPRO1 = '数据质量评价'
+ AND EVALUATIONPRO4 LIKE '降雨量观测连续性%'
+ ORDER BY
+ "ID"
+ </select>
+    <select id="getJYLGCCD" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+ SELECT
+ EVALUATIONPRO3,
+ TO_CHAR (MIN, '000000.00') AS MIN,
+ TO_CHAR (MAX, '000000.00') AS MAX,
+ SCORE,
+ TYPE
+ FROM
+ MG_SCOREMANAGER_DDZ
+ WHERE
+ EVALUATIONPRO1 = '数据质量评价'
+ AND EVALUATIONPRO4 LIKE '降雨量观测长度%'
+ ORDER BY
+ "ID"
+ </select>
+    <select id="getWDGCLXX" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+ SELECT
+ EVALUATIONPRO3,
+ TO_CHAR (MIN, '000000.00') AS MIN,
+ TO_CHAR (MAX, '000000.00') AS MAX,
+ SCORE,
+ TYPE
+ FROM
+ MG_SCOREMANAGER_DDZ
+ WHERE
+ EVALUATIONPRO1 = '数据质量评价'
+ AND EVALUATIONPRO4 LIKE '温度观测连续性%'
+ ORDER BY
+ "ID"
+ </select>
+    <select id="getWDGCCD" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+ SELECT
+ EVALUATIONPRO3,
+ TO_CHAR (MIN, '000000.00') AS MIN,
+ TO_CHAR (MAX, '000000.00') AS MAX,
+ SCORE,
+ TYPE
+ FROM
+ MG_SCOREMANAGER_DDZ
+ WHERE
+ EVALUATIONPRO1 = '数据质量评价'
+ AND EVALUATIONPRO4 LIKE '温度观测长度%'
+ ORDER BY
+ "ID"
+ </select>
+    <select id="getmonthgrade" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+ SELECT
+SCORE
+FROM
+"MG_SCOREMANAGER_DDZ"
+WHERE
+EVALUATIONPRO3 = '台站运行管理得分'
+ </select>
+    <select id="getElectricityRatio" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+SELECT
+SCORE,TYPE
+FROM
+"MG_SCOREMANAGER_DDZ"
+WHERE
+EVALUATIONPRO4='供电线漏电电流与供电电流的比值不应大于0.1％，供电线漏电电位差绝对值与人工电位差的比值不应大于0.5％'
+ </select>
+    <select id="getResistanceCotton" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+SELECT
+SCORE,TYPE
+FROM
+"MG_SCOREMANAGER_DDZ"
+WHERE
+EVALUATIONPRO4 = '测量线对地绝缘电阻不应小于5 MΩ'
+ </select>
+    <select id="getTouchResistance" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+SELECT
+SCORE,TYPE
+FROM
+"MG_SCOREMANAGER_DDZ"
+WHERE
+EVALUATIONPRO4='供电电极单电极接地电阻不应大于30Ω'
+ </select>
+    <select id="getTouchResistanceOne" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+SELECT
+SCORE,TYPE
+FROM
+"MG_SCOREMANAGER_DDZ"
+WHERE
+EVALUATIONPRO4='测量电极单电极接地电阻不应大于100Ω'
+ </select>
+    <select id="getOutElectricity" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+SELECT
+SCORE,TYPE
+FROM
+"MG_SCOREMANAGER_DDZ"
+WHERE
+EVALUATIONPRO4='输出电流：0.5 A～2.5 A'
+ </select>
+    <select id="getWBYS" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+SELECT
+SCORE,TYPE
+FROM
+"MG_SCOREMANAGER_DDZ"
+WHERE
+EVALUATIONPRO4='纹波因数：小于0.5％'
+ </select>
+    <select id="getDLWDD" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+SELECT
+SCORE,TYPE
+FROM
+"MG_SCOREMANAGER_DDZ"
+WHERE
+EVALUATIONPRO4='电流稳定度：优于0.5％'
+ </select>
+    <select id="getGCYQ" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+SELECT
+SCORE,TYPE
+FROM
+"MG_SCOREMANAGER_DDZ"
+WHERE
+EVALUATIONPRO3='观测仪器'
+ </select>
+    <select id="getJJZF" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+SELECT
+SCORE
+FROM
+"MG_SCOREMANAGER_DDZ"
+WHERE
+EVALUATIONPRO3='基建总分'
+ </select>
+    <select id="getSSLGRY" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+SELECT
+SCORE,TYPE
+FROM
+"MG_SCOREMANAGER_DDZ"
+WHERE
+EVALUATIONPRO4='基建施工、金属管网设施类干扰源'
+ </select>
+    <select id="getZRZF" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+SELECT
+SCORE
+FROM
+"MG_SCOREMANAGER_DDZ"
+WHERE
+EVALUATIONPRO3='自然总分'
+ </select>
+    <select id="getZRLGRY" resultType="com.gis.monitor.pojo.managegrade.MG_SCOREMANAGER_DDZ">
+SELECT
+SCORE,TYPE
+FROM
+"MG_SCOREMANAGER_DDZ"
+WHERE
+EVALUATIONPRO3='自然环境类干扰源'
+ </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>
